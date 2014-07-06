@@ -1,5 +1,17 @@
 require 'sinatra'
 
 get '/' do
-	"Hello, world"
+	@options = {
+		'title' => "Homebucket",
+		'active_page' => 0
+	}
+
+	@links = [
+		{
+			'name' => "Linkbucket",
+			'tagline' => "Grab links for later."
+		}
+	]
+
+	erb :index
 end
