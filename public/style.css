@@ -121,6 +121,10 @@ div.link div.logo {
 	margin: 16px 0;
 }
 
+div.link.prerelease div.logo {
+	margin-left: 100px;
+}
+
 div.link div.logo img {
 	width: 76px;
 	height: 76px;
@@ -132,4 +136,12 @@ div.link p.name {
 
 div.link p.tagline {
 	margin-bottom: 0;
+}
+
+div.link div.ribbon {
+	width: 100px;
+	height: 100px;
+	float: right;
+	background-image: url('/prerelease.png');
+	background-size: 100px;
 }

@@ -9,7 +9,13 @@ get '/' do
 	@links = [
 		{
 			'name' => "Linkbucket",
-			'tagline' => "Grab links for later."
+			'tagline' => "Grab links for later.",
+			'prerelease' => false
+		},
+		{
+			'name' => "Tunebucket",
+			'tagline' => "Listen to YouTube.",
+			'prerelease' => true
 		}
 	]
 

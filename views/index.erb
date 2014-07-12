@@ -2,8 +2,11 @@
 	<div class="row">
 		<% @links.each do |link| %>
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="link">
+				<div class="link <% if link['prerelease'] %>prerelease<% end %>">
 					<a href="http://<%= link['name'].downcase %>.joshasch.com" target="_blank">
+						<% if link['prerelease'] %>
+						<div class="ribbon"></div>
+						<% end %>
 						<div class="logo">
 							<img src="/logos/<%= link['name'].downcase %>.png" />
 						</div>
