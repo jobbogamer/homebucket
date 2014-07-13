@@ -13,7 +13,7 @@ get '/' do
 			'prerelease' => false
 		},
 		{
-			'name' => "Tunebucket",
+			'name' => "Songbucket",
 			'tagline' => "Listen to YouTube.",
 			'prerelease' => true
 		}
