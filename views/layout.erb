@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		 <%= ::NewRelic::Agent.browser_timing_header rescue "" %>
 		<title><%= @options['title'] %></title>
 
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
