@@ -20,7 +20,7 @@ get '/' do
 			'name' => "Songbucket",
 			'tagline' => "Listen to YouTube.",
 			'prerelease' => true
-		}
+		},
 		{
 			'name' => "Workbucket",
 			'tagline' => "Stylish timesheets.",
