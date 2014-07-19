@@ -21,6 +21,11 @@ get '/' do
 			'tagline' => "Listen to YouTube.",
 			'prerelease' => true
 		}
+		{
+			'name' => "Workbucket",
+			'tagline' => "Stylish timesheets.",
+			'prerelease' => true
+		}
 	]
 
 	erb :index
