@@ -3,6 +3,7 @@ GEM
   specs:
     newrelic_rpm (3.9.0.229)
     rack (1.5.2)
+    sequel (4.15.0)
     sinatra (1.1.0)
       rack (~> 1.1)
       tilt (~> 1.1)
@@ -13,4 +14,5 @@ PLATFORMS
 
 DEPENDENCIES
   newrelic_rpm
+  sequel
   sinatra (= 1.1.0)
