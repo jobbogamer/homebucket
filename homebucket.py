@@ -8,6 +8,7 @@ import newrelic.agent
 
 # Local
 from model import database
+from model.options import Options
 
 ##### Config #####
 
@@ -23,12 +24,20 @@ except KeyError as error:
 
 database.db.init_app(app)
 
+options = Options()
+
 ##### Routes #####
 
 @app.route('/')
 def index():
     database.create_tables()
-    return str(database.get_all_repos())
+
+    options.title = "Homebucket"
+    options.active_page = 0
+
+    repos = database.get_all_repos()
+
+    return render_template('base.html', options=options, repos=repos)
 
 ##### API Routes #####
 
