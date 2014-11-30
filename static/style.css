@@ -1,0 +1,39 @@
+div.repo {
+	height: 174px;
+	overflow: auto;
+	margin-bottom: 20px;
+	display: block;
+	position: relative;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	text-align: center;
+}
+
+div.repo * {
+	margin: 0;
+	padding: 0;
+}
+
+div.repo a {
+	color: #000000;
+	cursor: pointer;
+}
+
+div.repo a:hover {
+	color: #00bd83;
+	text-decoration: none;
+}
+
+div.repo div.logo {
+	margin: 16px 0;
+}
+
+div.repo div.logo img {
+	width: 76px;
+	height: 76px;
+}
+
+div.repo p.name {
+	font-size: 18px;
+	margin: 0 0 10px;
+}

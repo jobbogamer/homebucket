@@ -9,6 +9,7 @@ import newrelic.agent
 # Local
 from model import database
 from model.options import Options
+from external_apis import github
 
 ##### Config #####
 
@@ -35,7 +36,11 @@ def index():
     options.title = "Homebucket"
     options.active_page = 0
 
-    repos = database.get_all_repos()
+    #repos = database.get_all_repos()
+
+    repos = github.get_repos_for_user("jobbogamer")
+    repos = [r for r in repos if r.name.endswith('bucket') and \
+                not r.name == "homebucket"]
 
     return render_template('index.html', options=options, repos=repos)
 
