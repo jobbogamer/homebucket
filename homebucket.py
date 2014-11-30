@@ -37,7 +37,7 @@ def index():
 
     repos = database.get_all_repos()
 
-    return render_template('base.html', options=options, repos=repos)
+    return render_template('index.html', options=options, repos=repos)
 
 ##### API Routes #####
 
