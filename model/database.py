@@ -7,10 +7,10 @@ db = SQLAlchemy()
 ##### Models #####
 
 class Repo(db.Model):
-    id = database.Column(db.Integer, primary_key=True)
-    name = database.Column(db.String)
-    url = database.Column(db.String)
-    site_url = database.Column(db.String)
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    url = db.Column(db.String)
+    site_url = db.Column(db.String)
 
     def __init__(self):
         self.name = ""
