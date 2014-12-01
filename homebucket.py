@@ -36,16 +36,45 @@ def index():
     options.title = "Homebucket"
     options.active_page = 0
 
-    #repos = database.get_all_repos()
-
-    repos = github.get_repos_for_user("jobbogamer")
-    repos = [r for r in repos if r.name.endswith('bucket') and \
-                not r.name == "homebucket"]
+    repos = database.get_all_repos()
 
     return render_template('index.html', options=options, repos=repos)
 
 ##### API Routes #####
 
+@app.route('/api/github')
+def api_github():
+    repos = database.get_all_repos()
+    remote_repos = github.get_repos_for_user("jobbogamer")
+    new_repos = []
+
+    if repos is None:
+        result = {
+            "success": False,
+            "repos": []
+        }
+    else:
+        for repo in remote_repos:
+            if repo.name.endswith('bucket') and not repo.name == "homebucket":
+                already_known = False
+                for local_repo in repos:
+                    if local_repo.name == repo.name:
+                        already_known = True
+
+                if not already_known:
+                    new_repos.append({
+                        'name': repo.name,
+                        'description': repo.description,
+                        'site_url': repo.site_url
+                    })
+                    database.add_repo(repo)
+
+        result = {
+            "success": True,
+            "repos": new_repos
+        }
+
+    return jsonify(result)
 
 
 ##### Template Filters #####

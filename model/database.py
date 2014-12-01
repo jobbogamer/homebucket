@@ -11,11 +11,13 @@ class Repo(db.Model):
     name = db.Column(db.String)
     url = db.Column(db.String)
     site_url = db.Column(db.String)
+    description = db.Column(db.String)
 
     def __init__(self):
         self.name = ""
         self.url = ""
         self.site_url = ""
+        self.description = ""
 
 ##### Public Methods #####
 
