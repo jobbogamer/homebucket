@@ -1,1 +1,1 @@
-web: bundle exec ruby homebucket.rb -p $PORT
+web: gunicorn homebucket:app

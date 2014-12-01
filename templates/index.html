@@ -1,0 +1,27 @@
+{% extends 'header.html' %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+    {% for repo in repos %}
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div id="repo-{{ repo.id }}" class="repo">
+                <a target="_blank" href="{{ repo.site_url }}">
+                    {% if repo.notifications > 0 %}
+                    <div class="notification-badge">
+                        <p class="notification-text">{{ repo.notifications }}</p>
+                    </div>
+                    {% endif %}
+                    <div class="logo">
+                        <img src="{{ repo.site_url }}/static/apple-touch-icon.png" />
+                    </div>
+                    <p class="name">{{ repo.name.capitalize() }}</p>
+                    <p class="description">{{ repo.description }}</p>
+                </a>
+            </div>  
+        </div>
+    {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
