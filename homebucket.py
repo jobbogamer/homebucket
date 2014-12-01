@@ -10,6 +10,7 @@ import newrelic.agent
 from model import database
 from model.options import Options
 from external_apis import github
+from external_apis import notifications
 
 ##### Config #####
 
@@ -37,6 +38,8 @@ def index():
     options.active_page = 0
 
     repos = database.get_all_repos()
+    for repo in repos:
+        notifications.check_for_notifications(repo)
 
     return render_template('index.html', options=options, repos=repos)
 
