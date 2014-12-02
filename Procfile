@@ -1,1 +1,1 @@
-web: gunicorn homebucket:app
+web: gunicorn homebucket:app --log-file -
