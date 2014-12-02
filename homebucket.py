@@ -72,6 +72,19 @@ def api_github():
                     })
                     database.add_repo(repo)
 
+        for repo in repos:
+            still_exists = False
+            for remote_repo in remote_repos:
+                if remote_repo.name == repo.name:
+                    still_exists = True
+                    repo.description = remote_repo.description
+                    repo.site_url = remote_repo.site_url
+
+            if not still_exists:
+                database.delete_repo(repo)
+
+        database.commit_changes()
+
         result = {
             "success": True,
             "repos": new_repos

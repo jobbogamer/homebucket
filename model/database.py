@@ -29,8 +29,7 @@ def create_tables():
     db.create_all()
 
 
-def delete_repo(id):
-    repo = get_repo(id)
+def delete_repo(repo):
     db.session.delete(repo)
     commit_changes()
 
