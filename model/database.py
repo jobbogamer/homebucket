@@ -1,5 +1,4 @@
 
-from repo import Repo
 from flask.ext.sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
