@@ -14,8 +14,7 @@ from external_apis import notifications
 
 ##### Config #####
 
-#newrelic.agent.initialize('newrelic.ini')
-print "biscuits"
+newrelic.agent.initialize('newrelic.ini')
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "d47d2b74ff64e5a6ae5aedd4edebeaf1"
